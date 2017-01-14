@@ -98,7 +98,8 @@ if ((Get-VisualStudioVersions) -notcontains $vsVersion)
 }
 
 # Installed extension
-$vsExtensionIDs = (Get-LocalExtensionIDs 14.0) + (Get-AdminExtensionIDs 14.0)
+$vsLocalExtensionIDs = (Get-LocalExtensionIDs $vsVersion)
+$vsAdminExtensionIDs = (Get-AdminExtensionIDs $vsVersion)
 
 # ID of requested extension
 $vsixID = Get-ExtensionIdentifierVsix $vsix
@@ -106,7 +107,15 @@ $vsixID = Get-ExtensionIdentifierVsix $vsix
 # Construct path to VSIXInstaller
 $vsixInstaller = (Get-VisualStudioInstallDir $vsVersion) + "VSIXInstaller.exe"
 
-if ($vsExtensionIDs -contains $vsixID)
+if ($vsLocalExtensionIDs -contains $vsixID)
+{
+    Write-Host "Uninstalling current version of extension: """$vsixID""""
+    
+    $args = "/q /u:"""+$vsixID+""""
+    Start-Process $vsixInstaller $args -Wait
+}
+
+if ($vsAdminExtensionIDs -contains $vsixID)
 {
     Write-Host "Uninstalling current version of extension: """$vsixID""""
     
@@ -116,5 +125,5 @@ if ($vsExtensionIDs -contains $vsixID)
 
 Write-Host "Installing: """$vsix""""
 
-$args = "/q /a """+$vsix+""""
+$args = "/q """+$vsix+""""
 Start-Process $vsixInstaller $args -Wait

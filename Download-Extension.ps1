@@ -4,7 +4,7 @@ $uri = $args[0]
 Import-Module BitsTransfer
 
 # Access the scripts with the download link
-$script = (Invoke-WebRequest $uri).Scripts | Where-Object { $_.class -Like "vss-extension" }
+$script = (Invoke-WebRequest -ErrorAction:SilentlyContinue -URI $uri).Scripts | Where-Object { $_.class -Like "vss-extension" }
 
 # Convert to JSON for easier access
 $content = $script.innerText | ConvertFrom-Json

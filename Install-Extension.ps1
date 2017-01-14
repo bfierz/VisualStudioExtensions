@@ -100,8 +100,6 @@ if ((Get-VisualStudioVersions) -notcontains $vsVersion)
 # Installed extension
 $vsExtensionIDs = (Get-LocalExtensionIDs 14.0) + (Get-AdminExtensionIDs 14.0)
 
-$vsExtensionIDs 
-
 # ID of requested extension
 $vsixID = Get-ExtensionIdentifierVsix $vsix
 

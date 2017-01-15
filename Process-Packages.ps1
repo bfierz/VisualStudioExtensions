@@ -1,4 +1,4 @@
-﻿$content = Get-Content "Pacakges.md"
+﻿$content = Get-Content "Packages.md"
 
 $regex = [regex]"(https.*)\)"
 $matches = $content | ForEach-Object { $regex.Matches($_) }

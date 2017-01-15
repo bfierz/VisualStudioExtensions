@@ -45,6 +45,8 @@ Editor
 
 [NShader](https://github.com/samizzo/nshader)
 
+[ClangFormat](https://marketplace.visualstudio.com/items?itemName=HansWennborg.ClangFormat)
+
 SDKs
 ----
 

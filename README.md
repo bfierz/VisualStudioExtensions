@@ -1,53 +1,25 @@
-# VisualStudioExtensions
+# Visual Studio Extension Batch Installer
 
-General
--------
+Visual studio is a great tool to develop software, however, when it comes to develop software on different machines, developers usually find themselfs having a hard time synchronizing their development enviroments.  
+In order to ease some of the situation, this repository contains PowerShell scripts to help automatically update/install VSIX from a list of Visual Studio market place links.
 
-[Rename Visual Studio Window Title](https://marketplace.visualstudio.com/items?itemName=mayerwin.RenameVisualStudioWindowTitle)
-
+There is an extension which allows you to synchronize the extensions across machines (
 [Roaming Extension Manager](https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.RoamingExtensionManager)
+).
+It works sufficiently well, however, the interface is cluttered with extensions I'd rather not synchronize, which makes me loose overview.
 
-Source Control
---------------
-
-[AnkhSVN - Subversion Support / SCC Provider](https://marketplace.visualstudio.com/items?itemName=vs-publisher-303797.AnkhSVN-SubversionSupportSCCProvider)
-
-[Git Diff Margin](https://marketplace.visualstudio.com/items?itemName=LaurentKempe.GitDiffMargin)
-
-[GitFlow for Visual Studio 2015](https://marketplace.visualstudio.com/items?itemName=vs-publisher-57624.GitFlowforVisualStudio2015)
-
-[Visual Studio Comparison Tools](https://marketplace.visualstudio.com/items?itemName=MikkoHalttunen.VisualStudioComparisonTools)
-
-Build System
+Requirements
 ------------
 
-[CMake Tools for Visual Studio](https://marketplace.visualstudio.com/items?itemName=DGolub.CMakeToolsforVisualStudio-10956)
+The scripts where developed on PowerShell 5.1. At least PowerShell 3.0 is required for some web call; anything inbetween is not tested.
 
-[Cppcheck add-in](https://marketplace.visualstudio.com/items?itemName=Alexium.Cppcheckadd-in)
+Usage
+-----
 
-[PdbProject for Visual Studio 2015](https://marketplace.visualstudio.com/items?itemName=VisualCPPTeam.PdbProjectforVisualStudio2015)
+* Run Process-Packages.ps1 in an elevated PowerShell console. This downloads and installs all packages in Packages.md
 
-Debugging
----------
 
-[C++ Debugger Visualizers for VS2015](https://marketplace.visualstudio.com/items?itemName=ArkadyShapkin.CDebuggerVisualizersforVS2015)
+As these scripts were mainly written to improve my own development experience, the best way to use this repository is to fork it and populate custom 'Packages.md'.
+However, if you have any improvement I would be happy to integrate your pull-requests.
 
-[Concurrency Visualizer for Visual Studio 2015](https://marketplace.visualstudio.com/items?itemName=VisualStudioProductTeam.ConcurrencyVisualizerforVisualStudio2015)
-
-[GoogleTest Runner for VS2015](https://marketplace.visualstudio.com/items?itemName=vkantchev.GoogleTestRunnerforVisualStudio2015)
-
-[Image Watch](https://marketplace.visualstudio.com/items?itemName=WolfKienzle.ImageWatch)
-
-Editor
-------
-
-[Productivity Power Tools 2015](https://marketplace.visualstudio.com/items?itemName=VisualStudioProductTeam.ProductivityPowerTools2015)
-
-[Multi Edit Mode](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.MultiEditMode)
-
-[NShader](https://github.com/samizzo/nshader)
-
-SDKs
-----
-
-[Visual C++ 2015 Debugger Launch Extension](https://marketplace.visualstudio.com/items?itemName=AndrewLArnott.VisualC2015DebuggerLaunchExtension)
+-- Basil Fierz

@@ -8,4 +8,4 @@ $links = $matches | ForEach-Object { $_.Groups[1].Value }
 $files = $links | ForEach-Object { .\Download-Extension.ps1 $_ }
 
 # Install all the extensions
-$files | ForEach-Object { .\Install-Extension.ps1 14.0 $_ }
+$files | ForEach-Object { if (Test-Path $_) {.\Install-Extension.ps1 14.0 $_ } }
